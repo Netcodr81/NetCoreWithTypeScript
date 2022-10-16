@@ -40,6 +40,10 @@
 		<Exec Command="npm run build:production" />
 	</Target>
 
+	<Target Name="NpmRunBuildProduction" DependsOnTargets="CheckForNpm" Condition="'$(Configuration)' == 'Release'" BeforeTargets="Rebuild">
+		<Exec Command="npm run build:production" />
+	</Target>
+	
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.10" />
 	</ItemGroup>

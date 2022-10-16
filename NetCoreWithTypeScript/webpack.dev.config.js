@@ -1,8 +1,9 @@
-/// <binding ProjectOpened='Watch - Development' />
-var path = require("path");
+﻿/// <binding ProjectOpened='Watch - Development' />
+const path = require("path");
+
 module.exports = {
+
     entry: "./scripts/index.ts",
-    mode: "development",
     cache: false,
     module: {
         rules: [
@@ -14,7 +15,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: [".tsx", ".ts", ".js"],
+        extensions: [".ts", ".js"],
     },
     output: {
         library: {
@@ -23,5 +24,7 @@ module.exports = {
         },
         filename: "app-client.js",
         path: path.resolve(__dirname, "./wwwroot/js"),
-    }
-};
+    }   
+
+}
+
