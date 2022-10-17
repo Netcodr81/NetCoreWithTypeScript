@@ -5,6 +5,7 @@ module.exports = {
 
     entry: "./scripts/index.ts",
     cache: false,
+    mode: "development",
     module: {
         rules: [
             {

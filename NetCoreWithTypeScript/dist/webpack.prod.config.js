@@ -3,6 +3,7 @@ var path = require("path");
 module.exports = {
     entry: "./scripts/index.ts",
     cache: false,
+    mode: "production",
     module: {
         rules: [
             {

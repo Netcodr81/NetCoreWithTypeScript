@@ -26,21 +26,24 @@
 
 	<!--
       2. Run npm run build before building the .NET project.
-      MSBuild runs NpmInstall before this task because of the DependsOnTargets attribute.  -->
+      MSBuild runs NpmInstall before this task because of the DependsOnTargets attribute.  
+	  The following items are used to run the npm scripts found in your package.json file.
+	  
+	  -->
 	
-	<Target Name="NpmRunBuildDebug" DependsOnTargets="CheckForNpm" Condition="'$(Configuration)' == 'Debug'" BeforeTargets="Build">
+	<Target Name="NpmRunBeforeBuildDebug" DependsOnTargets="CheckForNpm" Condition="'$(Configuration)' == 'Debug'" BeforeTargets="Build">
 		<Exec Command="npm run build:development" />		
 	</Target>
 
-	<Target Name="NpmRunBuildDebug" DependsOnTargets="CheckForNpm" Condition="'$(Configuration)' == 'Debug'" BeforeTargets="Rebuild">
+	<Target Name="NpmRunBeforeRebuildDebug" DependsOnTargets="CheckForNpm" Condition="'$(Configuration)' == 'Debug'" BeforeTargets="Rebuild">
 		<Exec Command="npm run build:development" />
 	</Target>
 
-	<Target Name="NpmRunBuildProduction" DependsOnTargets="CheckForNpm" Condition="'$(Configuration)' == 'Release'" BeforeTargets="Build">
+	<Target Name="NpmRunBeforeBuildProduction" DependsOnTargets="CheckForNpm" Condition="'$(Configuration)' == 'Release'" BeforeTargets="Build">
 		<Exec Command="npm run build:production" />
 	</Target>
 
-	<Target Name="NpmRunBuildProduction" DependsOnTargets="CheckForNpm" Condition="'$(Configuration)' == 'Release'" BeforeTargets="Rebuild">
+	<Target Name="NpmRunBeforeRebuildProduction" DependsOnTargets="CheckForNpm" Condition="'$(Configuration)' == 'Release'" BeforeTargets="Rebuild">
 		<Exec Command="npm run build:production" />
 	</Target>
 	
